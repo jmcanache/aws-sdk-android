@@ -2706,12 +2706,12 @@ public class CognitoUser {
                     clientId, userId);
             final String csiAccessTokenKey = String
                     .format("CognitoIdentityProvider.%s.%s.accessToken", clientId, userId);
-            final String csiRefreshTokenKey = String
-                    .format("CognitoIdentityProvider.%s.%s.refreshToken", clientId, userId);
+            // final String csiRefreshTokenKey = String
+            //         .format("CognitoIdentityProvider.%s.%s.refreshToken", clientId, userId);
 
             pool.awsKeyValueStore.remove(csiIdTokenKey);
             pool.awsKeyValueStore.remove(csiAccessTokenKey);
-            pool.awsKeyValueStore.remove(csiRefreshTokenKey);
+            //pool.awsKeyValueStore.remove(csiRefreshTokenKey);
         } catch (final Exception e) {
             // Logging exception, this is not a fatal error
             LOGGER.error("Error while deleting from SharedPreferences", e);
